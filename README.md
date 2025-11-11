@@ -48,7 +48,6 @@ A modern, responsive portfolio website built with Angular and Tailwind CSS, show
    ng serve
    ```
 
-4. Open http://localhost:4200 in your browser
 
 ## Deployment
 
