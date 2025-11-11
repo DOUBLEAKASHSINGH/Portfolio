@@ -1,5 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeroComponent } from './hero/hero.component';
 import { AboutComponent } from './about/about.component';
@@ -14,6 +16,8 @@ import { ContactComponent } from './contact/contact.component';
   standalone: true,
   imports: [
     RouterOutlet,
+    CommonModule,
+    FormsModule,
     NavbarComponent,
     HeroComponent,
     AboutComponent,
