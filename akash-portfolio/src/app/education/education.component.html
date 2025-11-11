@@ -1,0 +1,52 @@
+<section id="education" class="py-20 bg-light">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">Education</h2>
+      <div class="w-24 h-1 bg-accent mx-auto"></div>
+    </div>
+
+    <div class="relative">
+      <!-- Timeline Line -->
+      <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-primary h-full hidden md:block"></div>
+
+      <div class="space-y-12">
+        <div *ngFor="let edu of education; let i = index"
+             class="relative flex items-center"
+             [attr.data-aos]="i % 2 === 0 ? 'fade-right' : 'fade-left'"
+             [attr.data-aos-delay]="200 + (i * 100)">
+
+          <!-- Timeline Dot -->
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-lg hidden md:block"></div>
+
+          <!-- Content Card -->
+          <div class="w-full md:w-5/12 ml-auto md:ml-0"
+               [ngClass]="i % 2 === 0 ? 'md:pr-8' : 'md:pl-8 md:ml-auto'">
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="flex items-start justify-between mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-primary mb-1">{{ edu.degree }}</h3>
+                  <p class="text-secondary font-semibold">{{ edu.institution }}</p>
+                </div>
+                <div class="text-right">
+                  <span class="text-sm text-gray-500">{{ edu.year }}</span>
+                  <div class="text-lg font-bold text-accent mt-1">{{ edu.cgpa }}</div>
+                </div>
+              </div>
+
+              <!-- Core Courses -->
+              <div>
+                <h4 class="text-sm font-semibold text-dark mb-2">Core Courses:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span *ngFor="let course of edu.courses"
+                        class="px-3 py-1 bg-light text-primary text-xs font-medium rounded-full">
+                    {{ course }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

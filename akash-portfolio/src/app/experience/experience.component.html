@@ -1,0 +1,65 @@
+<section id="experience" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">Experience & Achievements</h2>
+      <div class="w-24 h-1 bg-accent mx-auto"></div>
+    </div>
+
+    <!-- Achievements -->
+    <div class="mb-20">
+      <h3 class="text-3xl font-bold text-primary text-center mb-12" data-aos="fade-up">Achievements</h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div *ngFor="let achievement of achievements; let i = index"
+             class="bg-light p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+             [attr.data-aos]="i % 2 === 0 ? 'fade-up' : 'fade-up'"
+             [attr.data-aos-delay]="200 + (i * 100)">
+
+          <!-- Icon -->
+          <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path *ngIf="achievement.icon === 'graduation-cap'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+              <path *ngIf="achievement.icon === 'graduation-cap'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+              <path *ngIf="achievement.icon === 'award'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              <path *ngIf="achievement.icon === 'users'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              <path *ngIf="achievement.icon === 'code'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+              <circle *ngIf="achievement.icon === 'target'" cx="12" cy="12" r="10"/>
+              <circle *ngIf="achievement.icon === 'target'" cx="12" cy="12" r="6"/>
+              <circle *ngIf="achievement.icon === 'target'" cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+
+          <h4 class="text-xl font-bold text-primary mb-2">{{ achievement.title }}</h4>
+          <p class="text-secondary font-semibold text-sm mb-2">{{ achievement.organization }}</p>
+          <p class="text-xs text-gray-500 mb-3">{{ achievement.period }}</p>
+          <p class="text-gray-600 text-sm leading-relaxed">{{ achievement.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hobbies & Activities -->
+    <div>
+      <h3 class="text-3xl font-bold text-primary text-center mb-12" data-aos="fade-up">Hobbies & Activities</h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div *ngFor="let hobby of hobbies; let i = index"
+             class="bg-light p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300"
+             [attr.data-aos]="i % 2 === 0 ? 'fade-up' : 'fade-up'"
+             [attr.data-aos-delay]="300 + (i * 100)">
+
+          <!-- Icon -->
+          <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path *ngIf="hobby.icon === 'book-open'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              <path *ngIf="hobby.icon === 'code'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+              <path *ngIf="hobby.icon === 'camera'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+              <path *ngIf="hobby.icon === 'camera'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path *ngIf="hobby.icon === 'gamepad-2'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+            </svg>
+          </div>
+
+          <h4 class="text-lg font-bold text-primary mb-2">{{ hobby.name }}</h4>
+          <p class="text-gray-600 text-sm">{{ hobby.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
